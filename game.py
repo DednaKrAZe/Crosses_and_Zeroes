@@ -15,9 +15,7 @@ def zeroes_wins(map):
     return False
 
 def correct_move(map,line,column):
-    print(line,column)
     if line in ('1','2','3') and column in ('1','2','3'):
-        print(map[int(line)-1][int(column)-1])
         return map[int(line)-1][int(column)-1]==' '
     return False
 
