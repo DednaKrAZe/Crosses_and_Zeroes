@@ -24,8 +24,7 @@ map=[[' ',' ',' '],
      [' ',' ',' '],
      [' ',' ',' ']]
 
-print('Welcome the game! To make a move, enter numbers of line and column, where you want your sign to be placed')
-print(' ')
+print('Welcome the game! To make a move, enter numbers of line and column, where you want your sign to be placed \n')
 for i in map:
     print(i)
 print(' ')
@@ -38,14 +37,12 @@ zrwin=False
 while (not(crwin) and not(zrwin)):
 
     if move%2==1:
-        print('Now crosses')
-        print(' ')
+        print('Now crosses \n')
         coordinates=input()
         coordinates=coordinates.split()
         while not(correct_move(map,int(coordinates[0])-1,int(coordinates[1])-1)):
             print(' ')
-            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates')
-            print(' ')
+            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
             coordinates=input()
             coordinates=coordinates.split()
         map[int(coordinates[0])-1][int(coordinates[1])-1]='+'
@@ -65,14 +62,12 @@ while (not(crwin) and not(zrwin)):
         break
 
     if move%2==0:
-        print('Now zeroes')
-        print(' ')
+        print('Now zeroes \n')
         coordinates=input()
         coordinates=coordinates.split()
         while not(correct_move(map,int(coordinates[0])-1,int(coordinates[1])-1)):
             print(' ')
-            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates')
-            print(' ')
+            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
             coordinates=input()
             coordinates=coordinates.split()
         map[int(coordinates[0])-1][int(coordinates[1])-1]='0'
