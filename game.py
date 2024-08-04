@@ -1,16 +1,16 @@
 def crosses_wins(map):
-    if map[0][0]==map[1][1]==map[2][2]=='+' or map[0][2]==map[1][1]==map[2][0]=='+':
+    if map[0][0]==map[1][1]==map[2][2]=='X' or map[0][2]==map[1][1]==map[2][0]=='X':
         return True
     for i in range (0,3):
-        if map[i][0]==map[i][1]==map[i][2]=='+' or map[0][i]==map[1][i]==map[2][i]=='+':
+        if map[i][0]==map[i][1]==map[i][2]=='X' or map[0][i]==map[1][i]==map[2][i]=='X':
             return True
     return False
 
 def zeroes_wins(map):
-    if map[0][0]==map[1][1]==map[2][2]=='0' or map[0][2]==map[1][1]==map[2][0]=='0':
+    if map[0][0]==map[1][1]==map[2][2]=='O' or map[0][2]==map[1][1]==map[2][0]=='O':
         return True
     for i in range (0,3):
-        if map[i][0]==map[i][1]==map[i][2]=='0' or map[0][i]==map[1][i]==map[2][i]=='0':
+        if map[i][0]==map[i][1]==map[i][2]=='O' or map[0][i]==map[1][i]==map[2][i]=='O':
             return True
     return False
 
@@ -26,7 +26,6 @@ map=[[' ',' ',' '],
 print('Welcome the game! To make a move, enter numbers of line and column, where you want your sign to be placed \n')
 for i in map:
     print(i)
-print(' ')
 
 move=1
 
@@ -36,15 +35,14 @@ zrwin=False
 while (not(crwin) and not(zrwin)):
 
     if move%2==1:
-        print('Now crosses \n')
+        print('\n Now crosses \n')
         coordinates=input()
         coordinates=coordinates.split()
         while not(correct_move(map,coordinates[0],coordinates[1])):
-            print(' ')
-            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
+            print('\n Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
             coordinates=input()
             coordinates=coordinates.split()
-        map[int(coordinates[0])-1][int(coordinates[1])-1]='+'
+        map[int(coordinates[0])-1][int(coordinates[1])-1]='X'
         print(' ')
         for i in map:
             print(i)
@@ -65,11 +63,10 @@ while (not(crwin) and not(zrwin)):
         coordinates=input()
         coordinates=coordinates.split()
         while not(correct_move(map,coordinates[0],coordinates[1])):
-            print(' ')
-            print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
+            print('\n Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
             coordinates=input()
             coordinates=coordinates.split()
-        map[int(coordinates[0])-1][int(coordinates[1])-1]='0'
+        map[int(coordinates[0])-1][int(coordinates[1])-1]='O'
         print(' ')
         for i in map:
             print(i)
