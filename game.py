@@ -15,7 +15,9 @@ def zeroes_wins(map):
     return False
 
 def correct_move(map,line,column):
+    print(line,column)
     if line in ('1','2','3') and column in ('1','2','3'):
+        print(map[int(line)-1][int(column)-1])
         return map[int(line)-1][int(column)-1]==' '
     return False
 
@@ -64,7 +66,7 @@ while (not(crwin) and not(zrwin)):
         print('Now zeroes \n')
         coordinates=input()
         coordinates=coordinates.split()
-        while not(correct_move(map,int(coordinates[0])-1,int(coordinates[1])-1)):
+        while not(correct_move(map,coordinates[0],coordinates[1])):
             print(' ')
             print('Something has been already placed here or coordinates are outside of map. Please, enter correct coordinates \n')
             coordinates=input()
